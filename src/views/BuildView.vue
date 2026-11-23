@@ -279,7 +279,7 @@ function gradeColor(grade) {
             @click="store.select(currentStep, p)"
           >
             <!-- 产品图 -->
-            <div class="mb-3 h-36 w-full overflow-hidden rounded-lg bg-white">
+            <div class="mb-3 aspect-square w-full overflow-hidden rounded-lg bg-white">
               <PartImage :part="p" />
             </div>
             <div class="flex items-start justify-between">
