@@ -85,7 +85,7 @@ function goBack() {
     <div v-if="part">
       <!-- 头部 -->
       <div class="flex flex-col gap-6 sm:flex-row sm:items-start">
-        <div class="aspect-[4/3] w-full shrink-0 overflow-hidden rounded-2xl sm:w-64">
+        <div class="aspect-square w-full shrink-0 overflow-hidden rounded-2xl sm:w-64">
           <PartImage
             :part="part"
             mode="detail"
