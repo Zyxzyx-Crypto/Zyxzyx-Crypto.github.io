@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+}
+
+/*
+  主题机制：
+  - 深色（默认）：ink-* 为深蓝黑背景，白色文字
+  - 浅色（html.theme-light）：ink-* 反转为浅色面板，深色文字
+  - 语义色：ink-*（背景/面板）、txt-*（文字）、line-*（边框）
+ */
+@theme {
+  --color-ink-950: #0b0f1a;
+  --color-ink-900: #0f1524;
+  --color-ink-800: #161d30;
+  --color-ink-700: #1f2740;
+  --color-ink-600: #2b3554;
+
+  --color-txt-strong: #ffffff;
+  --color-txt-body: #cbd5e1;
+  --color-txt-muted: #94a3b8;
+  --color-txt-faint: #64748b;
+
+  --color-line-subtle: rgba(255, 255, 255, 0.08);
+  --color-line-normal: rgba(255, 255, 255, 0.14);
+}
+
+html.theme-light {
+  --color-ink-950: #eef1f6;
+  --color-ink-900: #f4f6fa;
+  --color-ink-800: #e4e8f0;
+  --color-ink-700: #d6dbe6;
+  --color-ink-600: #c3cbd9;
+
+  --color-txt-strong: #0f1524;
+  --color-txt-body: #1f2740;
+  --color-txt-muted: #47536b;
+  --color-txt-faint: #7a869c;
+
+  --color-line-subtle: rgba(15, 21, 36, 0.08);
+  --color-line-normal: rgba(15, 21, 36, 0.16);
+
+  /* 浅色主题下，slate 系映射到深色灰阶（这些仅用作文字色） */
+  --color-slate-200: #1f2740;
+  --color-slate-300: #33405a;
+  --color-slate-400: #47536b;
+  --color-slate-500: #5f6b84;
+  --color-slate-600: #7a869c;
+  --color-slate-700: #97a3b8;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 主题切换过渡 */
+body,
+body * {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
